@@ -18,13 +18,18 @@
     - libdtkcore5
     - libdtkgui5
     - libdtkwidget5
+    --若使用deepin 15.11 / ubuntu kylin 
+    - libdtkcore2
+    - libdtkgui2
+    - libdtkwidget2
 2. qt：
     - libqt5core5a
     - libqt5gui5
     - libqt5svg5
 3. 其他：
     - fakeroot
-
+4. 备注
+    - 若源码编译，请使用-dev包，如libdtkcore2-dev
 #### 参与贡献
 
 1.  Fork 本仓库

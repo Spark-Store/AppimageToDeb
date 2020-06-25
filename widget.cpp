@@ -5,7 +5,7 @@
 #include <QImage>
 #include <QPainter>
 #include <QtSvg/QSvgRenderer>
-#include <DProgressBar>
+//#include <DProgressBar> 15.11不支持这个
 #include <QFileDialog>
 #include <QFont>
 #include <QProcess>
