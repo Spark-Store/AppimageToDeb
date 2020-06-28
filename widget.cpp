@@ -18,8 +18,8 @@
 #include <QDragEnterEvent>
 #include <QRegExp>
 
-DWIDGET_USE_NAMESPACE
-
+//DWIDGET_USE_NAMESPACE
+//也不需要
 
 using namespace std;
 Widget::Widget(QWidget *parent) :
