@@ -26,6 +26,7 @@
     - libqt5core5a
     - libqt5gui5
     - libqt5svg5
+    - libqt5concurrent5
 3. 其他：
     - fakeroot
 4. 备注
@@ -33,4 +34,5 @@
 #### 参与贡献
 
 1.  Fork 本仓库
+
 
