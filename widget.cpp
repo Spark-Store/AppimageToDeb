@@ -5,7 +5,7 @@
 #include <QImage>
 #include <QPainter>
 #include <QtSvg/QSvgRenderer>
-//#include <DProgressBar> 15.11不支持这个
+//#include <DProgressBar>
 #include <QFileDialog>
 #include <QFont>
 #include <QProcess>
@@ -19,7 +19,7 @@
 #include <QRegExp>
 
 //DWIDGET_USE_NAMESPACE
-//也不需要
+
 
 using namespace std;
 Widget::Widget(QWidget *parent) :
@@ -159,9 +159,9 @@ void Widget::pack()
         lineStr = txtInput.readLine();  //读取数据
         if(lineStr.left(4)=="Exec"){
             if(ui->checkBox->isChecked()){
-                lineStr="Exec=/opt/durapps/a2d-packages/"+ctrl_Package+"/AppRun";
+                lineStr="Exec=/opt/durapps/a2d-packages/"+ctrl_Package+"/AppRun --no-sandbox";
             }else {
-                lineStr="Exec=/opt/durapps/a2d-packages/"+ctrl_Package+"/"+imageName;//关联快捷
+                lineStr="Exec=/opt/durapps/a2d-packages/"+ctrl_Package+"/"+imageName+" --no-sandbox";//关联快捷
             }
         }
         if(lineStr.left(4)=="Icon"){
@@ -188,16 +188,16 @@ void Widget::pack()
     out_control<<"Architecture: "<<ctrl_Architecture.toStdString()<<endl;
     out_control<<"Description: "<<ctrl_Description.toStdString()<<endl;
     out_control<<"Depends: \n";
-    out_control<<"Maintainer: community\n";
+    out_control<<"Maintainer: spark-store\n";
     out_control.close();
     ui->progressBar->setValue(80);
     update();
     ui->label_2->setText("正在打包,可能需要较长时间");
 
     if(ui->checkBox->isChecked()){
-        system("dpkg -b /tmp/packdeb "+dirPath.toUtf8()+"/"+ctrl_Package.toUtf8()+"_"+ctrl_Version.toUtf8()+"_a2d.deb");
+        system("dpkg -b /tmp/packdeb "+dirPath.toUtf8()+"/"+ctrl_Package.toUtf8()+"_"+ctrl_Version.toUtf8()+"_a2d_amd64.deb");
     }else {
-        system("fakeroot dpkg -b /tmp/packdeb "+dirPath.toUtf8()+"/"+ctrl_Package.toUtf8()+"_"+ctrl_Version.toUtf8()+"_a2d.deb");
+        system("fakeroot dpkg -b /tmp/packdeb "+dirPath.toUtf8()+"/"+ctrl_Package.toUtf8()+"_"+ctrl_Version.toUtf8()+"_a2d_amd64.deb");
     }
     ui->progressBar->setValue(100);
     update();

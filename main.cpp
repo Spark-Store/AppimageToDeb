@@ -11,12 +11,12 @@ int main(int argc, char *argv[])
      a.setAttribute(Qt::AA_UseHighDpiPixmaps);
      a.loadTranslator();
      a.setOrganizationName("DCS");
-     a.setApplicationVersion(DApplication::buildVersion("0.6+sm"));
+     a.setApplicationVersion(DApplication::buildVersion("0.7+spark"));
      a.setApplicationAcknowledgementPage("https://gitee.com/deepin-community-store/AppImageToDeb");
      a.setProductIcon(QIcon("://builder.png"));  //设置Logo
      a.setProductName("Appimage投稿工具");
      a.setApplicationName("A2D投稿"); //只有在这儿修改窗口标题才有效
-
+     a.setApplicationDescription("社区商店Appimage转制deb包工具，真正实现了有Appimage就可以投稿");
     MainWindow w;
     w.show();
 
